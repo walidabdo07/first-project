@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <video src="https://traversymedia.com/downloads/videos/explore.mp4" muted loop autoplay></video>
+    <div class="navigation">
+        <ul>
+            <li class="list active">
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="home-outline"></ion-icon>
+                    </span>
+                    <span class="text">Home</span>
+                </a>
+            </li>
+            <li class="list" id="connect">
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="person-outline"></ion-icon>
+                    </span>
+                    <span class="text">Profile</span>
+                </a>
+            </li>
+            <li class="list" id="test">
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="chatbubble-outline"></ion-icon>
+                    </span>
+                    <span class="text">Message</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="camera-outline"></ion-icon>
+                    </span>
+                    <span class="text">Photos</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="settings-outline"></ion-icon>
+                    </span>
+                    <span class="text">Settings</span>
+                </a>
+            </li>
+            <div class="indicator"></div>
+        </ul>
+    </div>
+    <div class="signin"></div>
+    <script>
+        const list = $('.list');
+        const signin = $('.signin')
+        function activeLink(){
+            list.removeClass('active');
+            $(this).addClass('active');
+        }
+        $("#connect").click(function(){
+            signin.load("signin.html")
+        })
+        list.click(activeLink);
+        function fun1(){
+            $(".card").css("transform" , "rotateY(-180deg)");
+        }
+        function fun2(){
+            $(".card").css("transform" , "rotateY(0deg)");
+        }
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
